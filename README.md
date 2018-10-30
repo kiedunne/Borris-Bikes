@@ -6,15 +6,15 @@
 
 #### Challenge 2: Creating a Domain Model from User Stories ####
 
-User Story
+##### User Story #####   
 
-*As a person,
-So that I can use a bike,
-I'd like a docking station to release a bike.
+*As a person,*   
+*So that I can use a bike,*   
+*I'd like a docking station to release a bike.*   
 
-As a person,
-So that I can use a good bike,
-I'd like to see if a bike is working*
+*As a person,*   
+*So that I can use a good bike,*   
+*I'd like to see if a bike is working*   
 
 | Objects        | Messages           
 | ---------------|:----------------------:|
@@ -22,24 +22,26 @@ I'd like to see if a bike is working*
 | bike           | check_bike_working     |
 | docking station| releasing_a_bike       |
 
-person ---> check_bike_working
-docking station ---> check_bike_working == true? ---> releasing_a_bike == true --> bike
+person ---> check_bike_working   
+docking station ---> check_bike_working == true? ---> releasing_a_bike == true --> bike    
 
 
 #### Challenge 3 & 4: Stack Trace and Error Reporting ####
 
-*1. Write down the type of error
- 2. Write down the file path where the error happened
- 3. Write down the line number of the error
- 4. Use the Ruby Documentation to find out what the error means
- 5. Suggest one way of solving the error.*
+ *1. Write down the type of error*   
+ *2. Write down the file path where the error happened*   
+ *3. Write down the line number of the error*   
+ *4. Use the Ruby Documentation to find out what the error means*   
+ *5. Suggest one way of solving the error.*    
 
 NameError: uninitialized constant DockingStation
   from (irb):1
   from /Users/username/.rvm/rubies/ruby-2.2.2/bin/irb:11:in '<main>'
 
-1. Uninitialized constant error - no class called DockingStation to instantiate.
+1. NameError: Uninitialized constant error - no class called DockingStation to instantiate.
 2. /Users/username/.rvm/rubies/ruby-2.2.2/bin/irb:11:in
-3. Line 11.
+3. Line 11.  
 4. *You'll see this error when the code refers to a class or module that it can't find, often because the code doesn't include require, which instructs the Ruby file to load the class.*
-5. Create a class called DockingStation.
+5. Create a class called DockingStation:
+```class DockingStation
+   end```
