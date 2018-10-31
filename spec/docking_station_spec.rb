@@ -29,7 +29,7 @@ describe DockingStation do
    it "Seeing docked bike" do
      bike = Bike.new
      subject.dock(bike)
-     expect(subject.bikes).to eq [bike] 
+     expect(subject.bikes).to eq [bike]
    end
 
    it "No bikes released if empty" do
@@ -37,7 +37,7 @@ describe DockingStation do
    end
 
    it "Cannot dock bike if station full" do
-     20.times {subject.dock(Bike.new)}
+     subject.capacity.times {subject.dock(Bike.new)}
      expect {subject.dock(Bike.new)}.to raise_error "No room for bike."
    end
 
