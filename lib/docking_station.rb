@@ -12,8 +12,8 @@ class DockingStation
 
   def release_bike
     fail "No docked bikes." if empty?
-    fail "Bike broken" if :broken?
-    @bikes.pop
+    fail "Bike broken" if !find_working_bike
+    @bikes.delete(find_working_bike)
   end
 
   def dock(bike)
@@ -30,4 +30,7 @@ class DockingStation
     @bikes.empty?
   end
 
+  def find_working_bike
+    @bikes.detect { |bike| bike.working? == true}
+  end
 end
